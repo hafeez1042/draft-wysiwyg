@@ -1,3 +1,3 @@
-import DraftEditor from './DraftEditor/DraftEditor';
+import Wysiwyg from './Wysiwyg/Wysiwyg';
 
-export default DraftEditor;
+export default Wysiwyg;
