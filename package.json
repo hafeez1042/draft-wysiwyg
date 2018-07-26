@@ -1,5 +1,5 @@
 {
-  "name": "@hafeez1042/draft-wysiwyg",
+  "name": "@hafeez1042/wysiwyg",
   "version": "1.0.0",
   "description": "WYSIWYG implimentation using draft js",
   "main": "dist/index.js",
