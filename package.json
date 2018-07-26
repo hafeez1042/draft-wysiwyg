@@ -28,6 +28,10 @@
   "homepage": "https://github.com/hafeez1042/draft-wysiwyg#readme",
   "dependencies": {
     "@fortawesome/fontawesome-pro": "^5.2.0",
+    "@fortawesome/fontawesome-svg-core": "^1.2.0-14",
+    "@fortawesome/pro-regular-svg-icons": "^5.1.0-11",
+    "@fortawesome/pro-solid-svg-icons": "^5.1.0-11",
+    "@fortawesome/react-fontawesome": "^0.1.0-11",
     "@types/is-hotkey": "^0.1.0",
     "@types/react": "^16.4.6",
     "@types/react-dom": "^16.0.6",

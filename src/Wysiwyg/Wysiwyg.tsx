@@ -6,7 +6,10 @@ import { isKeyHotkey } from 'is-hotkey';
 import { IWysiwygProps } from './IWysiwygProps';
 import { IWysiwygState } from './IWysiwygState';
 import { Button, Icon, Toolbar } from '../components';
-import {Bold, Italic, H1, H2, H3, Underline, Code, Quote, OrderedList, UnorderedList} from '../components/Icons/Icons';
+// import {Bold, Italic, H1, H2, H3, Underline, Code, Quote, OrderedList, UnorderedList} from '../components/Icons/Icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBold, faH1, faH2, faH3 } from '@fortawesome/pro-solid-svg-icons'
+import { faItalic, faUnderline, faCode, faQuoteLeft, faListOl, faListUl } from '@fortawesome/pro-regular-svg-icons'
 
 import initialValue from './value.json'
 
@@ -28,15 +31,15 @@ export default class Wysiwyg extends React.Component<IWysiwygProps, IWysiwygStat
     return (
       <div>
         <Toolbar>
-          {this._renderMarkButton('bold', <Bold />)}
-          {this._renderMarkButton('italic', <Italic />)}
-          {this._renderMarkButton('underlined', <Underline />)}
-          {this._renderMarkButton('code', <Code />)}
-          {this._renderBlockButton('heading-one', <H1 />)}
-          {this._renderBlockButton('heading-two', <H2 />)}
-          {this._renderBlockButton('block-quote', <Quote />)}
-          {this._renderBlockButton('numbered-list', <OrderedList />)}
-          {this._renderBlockButton('bulleted-list', <UnorderedList />)}
+          {this._renderMarkButton('bold', <FontAwesomeIcon icon={faBold} />)}
+          {this._renderMarkButton('italic', <FontAwesomeIcon icon={faItalic} />)}
+          {this._renderMarkButton('underlined', <FontAwesomeIcon icon={faUnderline} />)}
+          {this._renderMarkButton('code', <FontAwesomeIcon icon={faCode} />)}
+          {this._renderBlockButton('heading-one', <FontAwesomeIcon icon={faH1} />)}
+          {this._renderBlockButton('heading-two', <FontAwesomeIcon icon={faH2} />)}
+          {this._renderBlockButton('block-quote', <FontAwesomeIcon icon={faQuoteLeft} />)}
+          {this._renderBlockButton('numbered-list', <FontAwesomeIcon icon={faListOl} />)}
+          {this._renderBlockButton('bulleted-list', <FontAwesomeIcon icon={faListUl} />)}
         </Toolbar>
         <Editor
           spellCheck
