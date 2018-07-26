@@ -1,5 +1,5 @@
 {
-  "name": "@hafeez1042/wysiwyg",
+  "name": "slate-react-wysiwyg",
   "version": "1.0.1",
   "description": "WYSIWYG implimentation using draft js",
   "main": "dist/index.js",
