@@ -3,8 +3,8 @@ Its a simple implimetation of slate based WYSIWYG editor from slate's example.
 
 ## Installation
 ```sh
-npm install @hafeez1042/wysiwyg --save
-yarn add @hafeez1042/wysiwyg
+npm install slate-react-wysiwyg --save
+yarn add slate-react-wysiwyg
 ```
 
 ## Usage
@@ -12,7 +12,7 @@ yarn add @hafeez1042/wysiwyg
 ### Javascript
 
 ```javascript
-import Wysiwyg from '@hafeez1042/wysiwyg';
+import Wysiwyg from 'slate-react-wysiwyg';
 const element = <FontAwesomeIcon icon={faCoffee} />
 
 ReactDOM.render(element, document.body)
