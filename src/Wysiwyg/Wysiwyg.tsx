@@ -45,7 +45,7 @@ export default class Wysiwyg extends React.Component<IWysiwygProps, IWysiwygStat
           spellCheck
           autoFocus
           placeholder="Enter some rich text..."
-          value={this.state.value}
+          value={this.props.value}
           onChange={this._onChange}
           onKeyDown={this._onKeyDown}
           renderNode={this._renderNode}
@@ -56,12 +56,12 @@ export default class Wysiwyg extends React.Component<IWysiwygProps, IWysiwygStat
   }
 
   private _hasMark(type: string): boolean {
-    const { value } = this.state;
+    const { value } = this.props;
     return value.activeMarks.some(mark => mark && mark.type === type ? true : false); // TODO: Has to recheck
   }
 
   private _hasBlock(type: string): boolean {
-    const { value } = this.state;
+    const { value } = this.props;
     return value.blocks.some(node => node && node.type === type ? true : false);
   }
 
@@ -82,7 +82,7 @@ export default class Wysiwyg extends React.Component<IWysiwygProps, IWysiwygStat
     let isActive: boolean = this._hasBlock(type)
 
     if (['numbered-list', 'bulleted-list'].indexOf(type) >= 0) {
-      const { value } = this.state
+      const { value } = this.props
       const parent = value.document.getParent(value.blocks.first().key)
       isActive = this._hasBlock('list-item') && parent && parent["type"] === type ? true : false;
     }
@@ -140,8 +140,8 @@ export default class Wysiwyg extends React.Component<IWysiwygProps, IWysiwygStat
     }
   }
 
-  private _onChange({ value }: Change): void {
-    this.setState({ value });
+  private _onChange(change: Change): void {
+    this.props.onChange(change);
   }
 
   private _onKeyDown(event: KeyboardEvent, change: Change, editor: Editor): void | Change {
@@ -167,14 +167,14 @@ export default class Wysiwyg extends React.Component<IWysiwygProps, IWysiwygStat
 
   private _onClickMark(event, type): void {
     event.preventDefault()
-    const { value } = this.state
+    const { value } = this.props
     const change = value.change().toggleMark(type)
     this._onChange(change)
   }
 
   private _onClickBlock(event, type) {
     event.preventDefault()
-    const { value } = this.state
+    const { value } = this.props
     const change = value.change()
     const { document } = value
 
